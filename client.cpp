@@ -71,6 +71,11 @@ public:
 
 int main(){
 	client* c = new client();
-	c->Init(30000);
+	srand (time(NULL));
+	int random = rand() % 2;
+	int portnumber;
+	if(random==1) portnumber=30000;
+	else portnumber=32000;
+	c->Init(portnumber);
 	c->BuyTicket();
 }

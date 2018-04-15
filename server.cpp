@@ -218,16 +218,10 @@ int main(int argc, char **argv)
                 pthread_create(&threadPool[i], NULL, (void *(*)(void *))connectionHandler, (void *) NULL);
         }
 
-    cout << "listening\n";
 
         while(1)
         {
-                printf("\nMain: \t\t\t\tAccepting Connections\n");
-
-                /*The accept call blocks until a connection is found
-                 * then the connection is pushed onto the queue by queue_add*/
                 queue_add(accept(server, (struct sockaddr*)NULL, NULL)); 
 
-                printf("Main: \t\t\t\tConnection Completed\n\n");
         }
     }
