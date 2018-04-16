@@ -62,11 +62,12 @@ void doProcessing(int client){
                 ticket -= num;
                 if(ticket<0){
                     response = "not enough tickets left.\n";
-                    ticket += num; 
+                    ticket += num;
+                    cout << "There are no enough tickets left\n"; 
                 }
                 else cout << "Buy " << number << " " << type << " tickets, " << ticket <<" ticket left.\n";
             }
-            else if(type == "moives"){
+            else if(type == "movies"){
                 string host = "localhost";
                 struct hostent *hostEntry;
                 hostEntry = gethostbyname(host.c_str());
@@ -105,6 +106,7 @@ void doProcessing(int client){
                 response = "Error, Please enter correct type of ticket\n";
                 cout << "There is no " << type <<" tickets.\n";
             }
+            for(int i=0; i<5; i++){;}
             send(client, response.c_str(), response.length(), 0);
             close(client);
 }

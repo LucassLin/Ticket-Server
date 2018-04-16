@@ -51,6 +51,7 @@ public:
         	perror("connect");
         	exit(-1);
     	}
+    	cout << "What ticket would you like to buy and how many do you want?\n";
 	}
 
 	void BuyTicket(){
